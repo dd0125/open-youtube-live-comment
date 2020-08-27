@@ -1,0 +1,49 @@
+body {
+	background-color: transparent;
+	background-image:
+	 radial-gradient(#B18FF430 3px, transparent 3px);
+	background-size: 30px 30px;
+}
+
+.top-title {
+    font-weight: 600;
+    margin-bottom: 12px;
+    user-select: none;
+
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.top-title > img {
+    height: 100%;
+    margin-right: 4px;
+}
+
+.selector {
+    display: flex;
+    padding: 8px;
+    margin-bottom: 6px;
+    transition-duration: 0.5s;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.selector:hover {
+    background-color: #8080ff80;
+}
+
+
+.thumbnail {
+    width: 120px;
+    height: 90px;
+}
+
+.title {
+    width: 300px;
+    padding: 4px;
+}
+
+
+.wf-mplus1p {
+    font-family: "M PLUS 1p";
+}
