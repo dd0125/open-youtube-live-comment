@@ -34,7 +34,8 @@ function createVideoSelectorElement(youtubeData) {
     return selectorElement;
 }
 
-chrome.tabs.query({currentWindow: true}, function(tabs) {
+
+chrome.tabs.query({}, function(tabs) {
     let youtubeDataArray = [];
     tabs.forEach(function(tab) {
         const url = tab.url;
@@ -56,10 +57,19 @@ chrome.tabs.query({currentWindow: true}, function(tabs) {
 
     });
     const selectorAreaElement = document.querySelector('.selector-area');
-    for(let youtubeData of youtubeDataArray){
-        const videoSelectorElement = createVideoSelectorElement(youtubeData);
+    while( selectorAreaElement.firstChild ){
+        selectorAreaElement.removeChild( selectorAreaElement.firstChild );
+    }
+    if(youtubeDataArray.length > 0){
+        for(let youtubeData of youtubeDataArray){
+            const videoSelectorElement = createVideoSelectorElement(youtubeData);
 
-        selectorAreaElement.append(videoSelectorElement);
+            selectorAreaElement.append(videoSelectorElement);
+        }
+    }else {
+        const notFoundElement = document.createElement('div');
+        notFoundElement.innerText = "Youtube のタブが見つかりませんでした";
+        selectorAreaElement.append(notFoundElement);
     }
 
 });

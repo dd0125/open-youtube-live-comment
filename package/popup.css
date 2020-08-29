@@ -2,7 +2,8 @@ body {
 	background-color: transparent;
 	background-image:
 	 radial-gradient(#B18FF430 3px, transparent 3px);
-	background-size: 30px 30px;
+    background-size: 30px 30px;
+    width: 420px;
 }
 
 .top-title {
